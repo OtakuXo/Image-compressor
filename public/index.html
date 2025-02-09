@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="description" content="Image compressor" />
+   <meta name="author" content="Belphegor" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>image compressor</title>
+   <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="">
+         <div class="work-place">
+            <div class="input-wrapper">
+               <div id="croper"></div>
+               <img id="input-image" alt="" />
+            </div>
+         </div>
+         <div class="btn-container">
+            <div class="flex">
+               <label class="btn-style" for="upload">upload Image</label>
+               <input id="upload" type="file" name="upload" />
+            </div>
+            <div>
+               <select id="convert">
+                  <option value="jpeg">jpeg</option>
+                  <option value="png">png</option>
+               </select>
+            </div>
+         </div>
+      </div>
+      <div id="output-wrapper">
+         <div id="preview-container">
+            <canvas id="output-image"></canvas>
+         </div>
+         <button id="download" class="btn-style">download</button>
+      </div>
+   </div>
+</body>
+<script type="module" src="index.js"></script>
+<script src="js/upload.js"></script>
+<script type="module" src="js/croper.js"></script>
+<script type="module" src="js/controller.js"></script>
+
+
+</html>
