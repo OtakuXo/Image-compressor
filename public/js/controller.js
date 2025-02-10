@@ -1,15 +1,12 @@
 import {crop, croperCordinates} from './croper.js'
 
 const croperDom = document.getElementById("croper");
-const outputImageCanvas = document.getElementById("output-image");
 
 window.addEventListener("keydown", (e) => {
    croperDom.style.left = croperCordinates.x + "px";
    croperDom.style.top = croperCordinates.y + "px";
    croperDom.style.width = croperCordinates.whidth + "px";
    croperDom.style.height = croperCordinates.height + "px";
-   outputImageCanvas.width = croperCordinates.whidth;
-   outputImageCanvas.height = croperCordinates.height;
    crop();
    switch (e.key) {
       case "ArrowRight":
@@ -41,10 +38,6 @@ window.addEventListener("keydown", (e) => {
       case "{":
          croperCordinates.height--;
          croperCordinates.whidth--;
-         break;
-      case "p":
-      case "P":
-         crop();
          break;
    }
 });

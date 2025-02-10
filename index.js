@@ -28,6 +28,10 @@ const server = createServer((req, res) => {
          res.writeHead(200, { "content-type": "text/javascript" });
          createReadStream('public/js/controller.js','utf8',).pipe(res)
          break;
+      case '/js/mouse-controller.js':
+         res.writeHead(200, { "content-type": "text/javascript" });
+         createReadStream('public/js/mouse-controller.js','utf8',).pipe(res)
+         break;
    }
 });
 
