@@ -15,7 +15,12 @@
       <div class="">
          <div class="work-place">
             <div class="input-wrapper">
-               <div id="croper"></div>
+               <div dragable="flase" id="croper">
+                  <div id="croper-top"></div>
+                  <div id="croper-bottom"></div>
+                  <div id="croper-left"></div>
+                  <div id="croper-right"></div>
+               </div>
                <img id="input-image" alt="" />
             </div>
          </div>
@@ -33,17 +38,20 @@
          </div>
       </div>
       <div id="output-wrapper">
-         <div id="preview-container">
-            <canvas id="output-image"></canvas>
+         <div>
+            <div id="preview-container">
+               <img id="temp" src="" alt="">
+            </div>
+            <button id="download" class="btn-style">download</button>
          </div>
-         <button id="download" class="btn-style">download</button>
+            <canvas id="output-image"></canvas>
       </div>
-   </div>
 </body>
 <script type="module" src="index.js"></script>
 <script src="js/upload.js"></script>
 <script type="module" src="js/croper.js"></script>
-<script type="module" src="js/controller.js"></script>
-<script type="module" src="js/mouse-controller.js"></script>
+<script type="module" src="js/controllers/controller.js"></script>
+<script type="module" src="js/controllers/mouse-controller.js"></script>
+<script type="module" src="js/controllers/size-controller.js"></script>
 
 </html>

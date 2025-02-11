@@ -16,7 +16,6 @@
 body {
    background: var(--color1);
    color: var(--color3);
-   user-select: none;
 }
 
 a {
@@ -63,7 +62,7 @@ a {
 #croper-right {
    height: 100%;
    width: 10px;
-   cursor: ew-resize;
+   cursor: e-resize;
 }
 
 #croper-top,
@@ -74,21 +73,20 @@ a {
 }
 
 #croper-top {
-   top: -4px;
+   top: 0px;
 }
 
 #croper-bottom {
-   bottom: -4px;
+   bottom: 0px;
 }
 
 #croper-right {
-   right: -4px;
+   right: 0px;
 }
 
 #croper-left {
-   left: -4px;
+   left: 0px;
 }
-
 /* end */
 
 #input-image {
@@ -121,27 +119,19 @@ a {
 #preview-container {
    display: flex;
    justify-content: center;
-   align-items: center;
    width: 300px;
    height: 300px;
    border: 2px solid var(--color4);
    margin-bottom: 8px;
 }
 
-.potret {
-   height: auto;
-   width: 100%;
-}
+/* #output-image { */
+/*    height: 300px; */
+/*    width: 300px; */
+/* } */
 
-.horizontal{
-   height: 100%;
-   width: auto;
-}
 #output-wrapper {
    margin-left: 8px;
-}
-#output-image{
-   display: none;
 }
 
 .flex {

@@ -1,4 +1,4 @@
-import {crop, croperCordinates} from './croper.js'
+import {crop, croperCordinates} from '../croper.js'
 
 const croperDom = document.getElementById("croper");
 
@@ -7,35 +7,43 @@ window.addEventListener("keydown", (e) => {
    croperDom.style.top = croperCordinates.y + "px";
    croperDom.style.width = croperCordinates.whidth + "px";
    croperDom.style.height = croperCordinates.height + "px";
+   let key = e.key.toLowerCase()
+   console.log(key)
    crop();
-   switch (e.key) {
-      case "ArrowRight":
+   switch (key) {
+      case "arrowright":
       case "d":
-      case "D":
-         croperCordinates.x = croperCordinates.x + 5;
+         croperCordinates.x++;
          break;
-      case "ArrowLeft":
+      case "arrowleft":
       case "a":
-      case "A":
          croperCordinates.x--;
          break;
-      case "ArrowDown":
+      case "arrowdown":
       case "s":
-      case "S":
          croperCordinates.y++;
          break;
-      case "ArrowUp":
+      case "arrowup":
       case "w":
-      case "W":
          croperCordinates.y--;
          break;
       case "]":
-      case "}":
          croperCordinates.height++;
          croperCordinates.whidth++;
          break;
       case "[":
+         croperCordinates.height--;
+         croperCordinates.whidth--;
+         break;
+      case "}":
+         croperCordinates.x--;
+         croperCordinates.y--;
+         croperCordinates.height++;
+         croperCordinates.whidth++;
+         break;
       case "{":
+         croperCordinates.y++;
+         croperCordinates.x++;
          croperCordinates.height--;
          croperCordinates.whidth--;
          break;

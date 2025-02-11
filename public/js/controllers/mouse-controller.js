@@ -1,4 +1,4 @@
-import { crop, croperCordinates } from "./croper.js";
+import { crop, croperCordinates } from "../croper.js";
 
 const inputImage = document.getElementById("input-image");
 const croperDom = document.getElementById("croper");
@@ -17,7 +17,7 @@ inputImage.addEventListener("dblclick", (e) => {
    crop();
 });
 
-const drag = (e) => {
+const dragCroper = (e) => {
    croperCordinates.x = croperCordinates.x + e.movementX;
    croperCordinates.y = croperCordinates.y + e.movementY;
    croperDom.style.left = croperCordinates.x + "px";
@@ -26,9 +26,13 @@ const drag = (e) => {
 };
 
 croperDom.addEventListener("mousedown", () => {
-   croperDom.addEventListener("mousemove", drag);
+   croperDom.addEventListener("mousemove", dragCroper);
 });
 
 croperDom.addEventListener("mouseup", () => {
-   croperDom.removeEventListener("mousemove", drag);
+   croperDom.removeEventListener("mousemove", dragCroper);
 });
+croperDom.addEventListener("mouseout", () => {
+   croperDom.removeEventListener("mousemove", dragCroper);
+});
+

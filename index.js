@@ -24,13 +24,17 @@ const server = createServer((req, res) => {
          res.writeHead(200, { "content-type": "text/javascript" });
          createReadStream('public/js/croper.js','utf8',).pipe(res)
          break;
-      case '/js/controller.js':
+      case '/js/controllers/controller.js':
          res.writeHead(200, { "content-type": "text/javascript" });
-         createReadStream('public/js/controller.js','utf8',).pipe(res)
+         createReadStream('public/js/controllers/controller.js','utf8',).pipe(res)
          break;
-      case '/js/mouse-controller.js':
+      case '/js/controllers/mouse-controller.js':
          res.writeHead(200, { "content-type": "text/javascript" });
-         createReadStream('public/js/mouse-controller.js','utf8',).pipe(res)
+         createReadStream('public/js/controllers/mouse-controller.js','utf8',).pipe(res)
+         break;
+      case '/js/controllers/size-controller.js':
+         res.writeHead(200, { "content-type": "text/javascript" });
+         createReadStream('public/js/controllers/size-controller.js','utf8',).pipe(res)
          break;
    }
 });
