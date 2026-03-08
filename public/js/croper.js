@@ -39,18 +39,16 @@ export const crop = () => {
       (inputImage.naturalHeight * sourceImageOffsetHeightPersentage) / 100;
 
    context.drawImage(
-      inputImage, //source image
-      mousePositionInSourceImageNaturalX, // determindes starting point of x axis to draw
-      mousePositionInSourceImageNaturalY, //determindes starting point of y axis to draw
-      naturalImageWidth, // deteakjrmined ending point of x axis to draw or you can look it as wieth
-      naturalImageHeight, // determined ending point of y axis to draw or you can look it as height
-      0, // determinds where to start drawing in x axis of canvas
-      0, // determines where to start drawing in y axis of canvas
-      outputImageCanvas.width, // determinds where to end drawing in x axis of canvas or you can look it as wieth
-      outputImageCanvas.height, // determinds where to end drawing in y axis of canvas or you can look it as height
+      inputImage, 
+      mousePositionInSourceImageNaturalX, 
+      mousePositionInSourceImageNaturalY,
+      naturalImageWidth,
+      naturalImageHeight,
+      0, 
+      0,
+      outputImageCanvas.width, 
+      outputImageCanvas.height,
    );
    const dataUrl = outputImageCanvas.toDataURL("image/png");
    preview.src = dataUrl
-
 };
-crop();

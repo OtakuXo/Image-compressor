@@ -1,4 +1,4 @@
-import {crop, croperCordinates} from '../croper.js'
+import { crop, croperCordinates } from '../croper.js'
 
 const croperDom = document.getElementById("croper");
 
@@ -8,44 +8,43 @@ window.addEventListener("keydown", (e) => {
    croperDom.style.width = croperCordinates.whidth + "px";
    croperDom.style.height = croperCordinates.height + "px";
    let key = e.key.toLowerCase()
-   console.log(key)
    crop();
    switch (key) {
       case "arrowright":
       case "d":
-         croperCordinates.x++;
+         croperCordinates.x = croperCordinates.x + 5;
          break;
       case "arrowleft":
       case "a":
-         croperCordinates.x--;
+         croperCordinates.x = croperCordinates.x - 5;
          break;
       case "arrowdown":
       case "s":
-         croperCordinates.y++;
+         croperCordinates.y = croperCordinates.y + 5;
          break;
       case "arrowup":
       case "w":
-         croperCordinates.y--;
+         croperCordinates.y = croperCordinates.y - 5;
          break;
       case "]":
-         croperCordinates.height++;
-         croperCordinates.whidth++;
+         croperCordinates.height = croperCordinates.height + 5;
+         croperCordinates.whidth = croperCordinates.whidth + 5;
          break;
       case "[":
-         croperCordinates.height--;
-         croperCordinates.whidth--;
+         croperCordinates.height = croperCordinates.height - 5;
+         croperCordinates.whidth = croperCordinates.whidth - 5;
          break;
       case "}":
-         croperCordinates.x--;
-         croperCordinates.y--;
-         croperCordinates.height++;
-         croperCordinates.whidth++;
+         croperCordinates.x = croperCordinates.x - 5;
+         croperCordinates.y = croperCordinates.y - 5;
+         croperCordinates.height = croperCordinates.height + 5;
+         croperCordinates.whidth = croperCordinates.whidth + 5;
          break;
       case "{":
-         croperCordinates.y++;
-         croperCordinates.x++;
-         croperCordinates.height--;
-         croperCordinates.whidth--;
+         croperCordinates.y = croperCordinates.y + 5;
+         croperCordinates.x = croperCordinates.x + 5;
+         croperCordinates.height = croperCordinates.height - 5;
+         croperCordinates.whidth = croperCordinates.whidth - 5;
          break;
    }
 });

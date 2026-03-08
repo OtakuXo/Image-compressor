@@ -4,13 +4,14 @@ const inputImage = document.getElementById("input-image");
 const croperDom = document.getElementById("croper");
 
 inputImage.addEventListener("dblclick", (e) => {
+   // console.log(e)
    croperCordinates.x = e.offsetX;
    croperCordinates.y = e.offsetY;
-   croperCordinates.whidth = 10;
-   croperCordinates.height = 10;
+   croperCordinates.whidth = 100;
+   croperCordinates.height = 100;
 
-   croperDom.style.width = 10 + "px";
-   croperDom.style.height = 10 + "px";
+   croperDom.style.width = croperCordinates.whidth + "px";
+   croperDom.style.height = croperCordinates.height + "px";
    croperDom.style.left = e.offsetX + "px";
    croperDom.style.top = e.offsetY + "px";
 

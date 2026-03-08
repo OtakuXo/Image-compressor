@@ -2,7 +2,6 @@ import { createReadStream } from "fs";
 import { createServer } from "http";
 
 const server = createServer((req, res) => {
-   console.log(req.url);
    switch (req.url) {
       case '/':
          res.writeHead(200, { "content-type": "text/html" });

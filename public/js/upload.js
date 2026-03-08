@@ -1,3 +1,5 @@
+import { crop } from "./croper.js";
+
 const uploadImage = document.getElementById("upload");
 const inputImage = document.getElementById("input-image");
 
@@ -9,5 +11,6 @@ uploadImage.addEventListener("change", (e) => {
 
    fileReader.onload = (event) => {
       inputImage.src = event.target.result;
+      crop();
    };
 });
