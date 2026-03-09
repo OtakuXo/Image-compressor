@@ -37,15 +37,29 @@
             </div>
          </div>
       </div>
-      <div id="output-wrapper">
+      <div>
          <div>
             <div id="preview-container">
                <img id="prevew" src="" alt="">
             </div>
             <button id="download" class="btn-style">download</button>
+            <!-- this is always hidden in browser-->
+            <canvas id="output-image"></canvas>
          </div>
-         <!-- this is always hidden in browser-->
-         <canvas id="output-image"></canvas>
+
+         <div class="flex-col">
+            <form id="image-size-reducer-form" class="flex">
+               <label for="size-reducer-input">reduce size by</label>
+               <input id="size-reducer-input" type="number" name="size-reducer-input" min="0" max="1" title="grater then 0 and small then 1"  value="">
+            </form>
+            <ol id="image-info">
+               <li id="original-width">original width: </li>
+               <li id="original-height">original height: </li>
+               <li id="image-size">original size: </li>
+               <li id="output-size">output size: </li>
+            </ol>
+         </div>
+
       </div>
 </body>
 <script type="module" src="index.js"></script>

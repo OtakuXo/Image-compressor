@@ -1,12 +1,16 @@
 const inputImage = document.getElementById("input-image");
 const preview = document.getElementById("prevew");
+const reducer = document.getElementById("size-reducer-input")
+const outputSize = document.getElementById("output-size")
+
+// i need to make it so reducer value is in between 0-1
 export const croperCordinates = { x: 0, y: 0, whidth: 300, height: 300 };
 
 export const crop = () => {
    const outputImageCanvas = document.getElementById("output-image")
    const context = outputImageCanvas.getContext("2d");
-   outputImageCanvas.width = croperCordinates.whidth;
-   outputImageCanvas.height = croperCordinates.height;
+   outputImageCanvas.width = croperCordinates.whidth * reducer.value;
+   outputImageCanvas.height = croperCordinates.height * reducer.value;
 
    if (croperCordinates.whidth <= croperCordinates.height) {
       preview.className = "horizontal"
@@ -49,6 +53,11 @@ export const crop = () => {
       outputImageCanvas.width, 
       outputImageCanvas.height,
    );
-   const dataUrl = outputImageCanvas.toDataURL("image/png");
+   const dataUrl = outputImageCanvas.toDataURL("image/jpeg");
+   const base64string = dataUrl.split(',')[1];
+   const size = window.atob(base64string).length;
+   outputSize.innerHTML = "output size: " + (size / 1024).toFixed(2) + "kb"
+   // console.log(size)
+   
    preview.src = dataUrl
 };

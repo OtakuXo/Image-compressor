@@ -22,8 +22,17 @@ a {
    text-decoration: none;
 }
 
+ol{
+   list-style: none;
+}
+
+input{
+   margin-left: 10px;
+}
+
 .wrapper {
    display: flex;
+   gap: 10px;
 }
 
 .work-place {
@@ -137,13 +146,23 @@ a {
    height: 100%;
    width: auto;
 }
-#output-wrapper {
-   margin-left: 8px;
-}
+/* #output-wrapper { */
+/*    margin-left: 8px; */
+/* } */
 #output-image{
    display: none;
 }
 
 .flex {
    display: flex;
+}
+
+.flex-col {
+   display: flex;
+   flex-direction: column;
+
+}
+
+.image-size-reducer-form{
+   margin: 10px;
 }

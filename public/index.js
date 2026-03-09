@@ -3,6 +3,7 @@ const inputImage = document.getElementById("input-image");
 const download = document.getElementById("download");
 const convert = document.getElementById("convert");
 
+
 download.addEventListener("click", () => {
    const type = convert.value;
    let dataUrl = "";
